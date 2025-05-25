@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for better aesthetics */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem; /* p-10 */
+            border: 1px solid #e2e8f0; /* border-gray-200 */
+        }
+        .form-input, .form-textarea, .form-select {
+            margin-top: 0.25rem; /* mt-1 */
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem; /* px-4 py-2 */
+            border: 1px solid #d1d5db; /* border-gray-300 */
+            border-radius: 0.375rem; /* rounded-md */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            transition: all 0.2s ease-in-out;
+        }
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #6366f1; /* ring-indigo-500 */
+            border-color: #6366f1; /* border-indigo-500 */
+        }
+        .form-label {
+            display: block;
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            color: #374151; /* text-gray-700 */
+            margin-bottom: 0.25rem;
+        }
+        .submit-button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 1rem; /* py-2 px-4 */
+            border: 1px solid transparent;
+            border-radius: 0.375rem; /* rounded-md */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 500; /* font-medium */
+            color: #ffffff;
+            background-color: #4f46e5; /* bg-indigo-600 */
+            transition: background-color 0.3s ease-in-out;
+        }
+        .submit-button:hover {
+            background-color: #4338ca; /* hover:bg-indigo-700 */
+        }
+        .submit-button:focus {
+            outline: none;
+            ring: 2px;
+            ring-offset: 2px;
+            ring-color: #6366f1; /* focus:ring-indigo-500 */
+        }
+        .message-box {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+        .message-success {
+            background-color: #d1fae5; /* bg-green-100 */
+            color: #065f46; /* text-green-800 */
+            border: 1px solid #34d399; /* border-green-400 */
+        }
+        .message-error {
+            background-color: #fee2e2; /* bg-red-100 */
+            color: #991b1b; /* text-red-800 */
+            border: 1px solid #ef4444; /* border-red-400 */
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+    <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                Internship Application Form
+            </h1>
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                Please fill out the form below to apply for our internship programs.
+            </p>
+        </header>
+
+        <section class="w-full max-w-3xl form-container">
+            <form id="internship-application-form" class="space-y-6">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">Personal Information</h3>
+                <div>
+                    <label for="applicantFullName" class="form-label">Full Name</label>
+                    <input type="text" id="applicantFullName" name="fullName" required
+                           class="form-input" placeholder="John Doe">
+                </div>
+                <div>
+                    <label for="applicantEmail" class="form-label">Email Address</label>
+                    <input type="email" id="applicantEmail" name="email" required
+                           class="form-input" placeholder="john.doe@example.com">
+                </div>
+                <div>
+                    <label for="applicantPhone" class="form-label">Phone Number</label>
+                    <input type="tel" id="applicantPhone" name="phone"
+                           class="form-input" placeholder="+1234567890">
+                </div>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2 pt-6">Internship Details</h3>
+                <div>
+                    <label for="desiredRole" class="form-label">Desired Internship Role</label>
+                    <input type="text" id="desiredRole" name="desiredRole" required
+                           class="form-input" placeholder="e.g., Software Developer, Marketing Intern">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="startDate" class="form-label">Availability Start Date</label>
+                        <input type="date" id="startDate" name="startDate" required
+                               class="form-input">
+                    </div>
+                    <div>
+                        <label for="endDate" class="form-label">Availability End Date</label>
+                        <input type="date" id="endDate" name="endDate" required
+                               class="form-input">
+                    </div>
+                </div>
+                <div>
+                    <label for="resumeUpload" class="form-label">Upload Resume (PDF only)</label>
+                    <input type="file" id="resumeUpload" name="resume" accept=".pdf"
+                           class="form-input p-2">
+                    <p class="mt-1 text-sm text-gray-500">Max file size: 5MB</p>
+                </div>
+                <div>
+                    <label for="coverLetter" class="form-label">Cover Letter (Optional)</label>
+                    <textarea id="coverLetter" name="coverLetter" rows="6"
+                              class="form-textarea" placeholder="Tell us why you are interested in this internship and what you can bring to our team."></textarea>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2 pt-6">Education</h3>
+                <div>
+                    <label for="degree" class="form-label">Degree/Major</label>
+                    <input type="text" id="degree" name="degree"
+                           class="form-input" placeholder="e.g., B.Tech in Computer Science">
+                </div>
+                <div>
+                    <label for="university" class="form-label">University/Institution</label>
+                    <input type="text" id="university" name="university"
+                           class="form-input" placeholder="e.g., Indian Institute of Technology">
+                </div>
+                <div>
+                    <label for="graduationYear" class="form-label">Expected/Actual Graduation Year</label>
+                    <input type="number" id="graduationYear" name="graduationYear" min="1900" max="2100"
+                           class="form-input" placeholder="YYYY">
+                </div>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2 pt-6">Skills</h3>
+                <div>
+                    <label for="skills" class="form-label">Key Skills (e.g., Python, JavaScript, Marketing, Data Analysis)</label>
+                    <input type="text" id="skills" name="skills"
+                           class="form-input" placeholder="Comma-separated list of your skills">
+                </div>
+
+                <div>
+                    <button type="submit" class="submit-button">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+            <div id="form-submission-message" class="message-box hidden"></div>
+        </section>
+
+        <footer class="mt-16 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Internship Firm. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const internshipApplicationForm = document.getElementById('internship-application-form');
+        const formSubmissionMessage = document.getElementById('form-submission-message');
+
+        internshipApplicationForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Gather form data
+            const formData = {
+                fullName: document.getElementById('applicantFullName').value,
+                email: document.getElementById('applicantEmail').value,
+                phone: document.getElementById('applicantPhone').value,
+                desiredRole: document.getElementById('desiredRole').value,
+                startDate: document.getElementById('startDate').value,
+                endDate: document.getElementById('endDate').value,
+                // For resumeUpload, you would typically send the file to a backend server.
+                // Here, we're just logging its name as a placeholder.
+                resumeFileName: document.getElementById('resumeUpload').files[0] ? document.getElementById('resumeUpload').files[0].name : 'No file uploaded',
+                coverLetter: document.getElementById('coverLetter').value,
+                education: {
+                    degree: document.getElementById('degree').value,
+                    university: document.getElementById('university').value,
+                    graduationYear: document.getElementById('graduationYear').value
+                },
+                // Removed workExperience from formData
+                skills: document.getElementById('skills').value.split(',').map(skill => skill.trim()).filter(skill => skill !== '')
+            };
+
+            fetch("http://localhost:5000/apply", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+})
+.then(response => response.json())
+.then(data => {
+    console.log("Success:", data);
+    formSubmissionMessage.textContent = 'Your internship application has been submitted successfully!';
+    formSubmissionMessage.classList.remove('hidden', 'message-error');
+    formSubmissionMessage.classList.add('message-success');
+    internshipApplicationForm.reset();
+
+    setTimeout(() => {
+        formSubmissionMessage.classList.add('hidden');
+    }, 7000);
+})
+.catch(error => {
+    console.error("Error:", error);
+    formSubmissionMessage.textContent = 'There was an error submitting your application. Please try again later.';
+    formSubmissionMessage.classList.remove('hidden', 'message-success');
+    formSubmissionMessage.classList.add('message-error');
+});
+
+            
+
+            // Display a success message
+            formSubmissionMessage.textContent = 'Your internship application has been submitted successfully! We will review it and get back to you.';
+            formSubmissionMessage.classList.remove('hidden', 'message-error');
+            formSubmissionMessage.classList.add('message-success');
+
+            // Optionally, clear the form fields after successful submission
+            internshipApplicationForm.reset();
+
+            // Hide the message after a few seconds
+            setTimeout(() => {
+                formSubmissionMessage.classList.add('hidden');
+            }, 7000);
+        });
+    </script>
+</body>
+</html>

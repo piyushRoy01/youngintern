@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partner Companies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for better aesthetics */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        /* Custom styles for better visual appeal */
+        .company-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e0e0e0; /* Light gray for placeholder */
+            color: #555;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.25rem; /* text-xl */
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+    <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                Our Esteemed Partner Companies
+            </h1>
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                Discover the leading organizations we collaborate with to provide unparalleled internship opportunities.
+            </p>
+        </header>
+
+        <main id="companies-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-7xl">
+            </main>
+
+        <footer class="mt-16 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Internship Firm. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Array of company data
+        const companies = [
+            {
+                name: "Central Coalfields Limited (CCL)",
+                logoText: "CCL",
+                description: "A Mini-Ratna Category-I company, Central Coalfields Limited (CCL) is a subsidiary of Coal India Limited (CIL), engaged in coal mining in Jharkhand.",
+                link: "https://www.centralcoalfields.in/"
+            },
+            {
+                name: "MECON Limited",
+                logoText: "MECON",
+                description: "MECON Limited is a premier Public Sector Undertaking under the Ministry of Steel, Government of India, providing consultancy and engineering services.",
+                link: "https://www.meconlimited.co.in/"
+            },
+            {
+                name: "Tata Motors (formerly Telco)",
+                logoText: "TATA MOTORS",
+                description: "Tata Motors Limited is an Indian multinational automotive manufacturing corporation, part of the Tata Group. Formerly known as TELCO (Tata Engineering and Locomotive Company).",
+                link: "https://www.tatamotors.com/"
+            },
+            {
+                name: "Tata Steel (formerly Tisco)",
+                logoText: "TATA STEEL",
+                description: "Tata Steel Limited is an Indian multinational steel-making company based in Jamshedpur, Jharkhand, and headquartered in Mumbai, Maharashtra. Formerly known as TISCO (Tata Iron and Steel Company).",
+                link: "https://www.tatasteel.com/"
+            },
+            {
+                name: "Jindal Steel & Power Limited",
+                logoText: "JINDAL",
+                description: "Jindal Steel & Power Limited (JSPL) is an Indian steel company based in Hisar, Haryana. It is a part of the OP Jindal Group.",
+                link: "https://www.jindalsteelpower.com/"
+            },
+            {
+                name: "Reliance Industries Limited",
+                logoText: "RELIANCE",
+                description: "Reliance Industries Limited is an Indian multinational conglomerate company, headquartered in Mumbai, Maharashtra, India. It has diverse interests including energy, petrochemicals, natural resources, retail, and telecommunications.",
+                link: "https://www.ril.com/"
+            },
+            {
+                name: "Steel Authority of India Limited (SAIL)",
+                logoText: "SAIL",
+                description: "Steel Authority of India Limited (SAIL) is a central public sector undertaking and one of the largest steel producers in India.",
+                link: "https://www.sail.co.in/"
+            },
+            {
+                name: "GAIL (India) Limited",
+                logoText: "GAIL",
+                description: "GAIL (India) Limited is a Maharatna Public Sector Undertaking under the Ministry of Petroleum and Natural Gas, Government of India. It is the largest state-owned natural gas processing and distribution company in India.",
+                link: "https://www.gailonline.com/"
+            }
+           
+        ];
+
+        // Get the container where company cards will be added
+        const companiesContainer = document.getElementById('companies-container');
+
+        // Function to create a company card HTML
+        function createCompanyCard(company) {
+            // Create the main card div
+            const card = document.createElement('div');
+            card.className = 'company-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-200';
+
+            // Create the logo placeholder div
+            const logo = document.createElement('div');
+            logo.className = 'logo-placeholder w-28 h-28 mb-4 rounded-lg flex items-center justify-center text-xl font-bold text-gray-700 bg-gray-100 border border-gray-300';
+            logo.textContent = company.logoText; // Display text as logo
+
+            // Create the company name heading
+            const name = document.createElement('h2');
+            name.className = 'text-2xl font-semibold text-gray-900 mb-2';
+            name.textContent = company.name;
+
+            // Create the description paragraph
+            const description = document.createElement('p');
+            description.className = 'text-gray-600 mb-4 flex-grow'; // flex-grow to ensure consistent height
+            description.textContent = company.description;
+
+            // Create the connection link
+            const link = document.createElement('a');
+            link.href = company.link;
+            link.target = "_blank"; // Open in new tab
+            link.rel = "noopener noreferrer"; // Security best practice
+            link.className = 'inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-5 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg';
+            link.textContent = 'Visit Website';
+
+            // Append all elements to the card
+            card.appendChild(logo);
+            card.appendChild(name);
+            card.appendChild(description);
+            card.appendChild(link);
+
+            return card;
+        }
+
+        // Loop through the companies array and add each card to the container
+        companies.forEach(company => {
+            const companyCard = createCompanyCard(company);
+            companiesContainer.appendChild(companyCard);
+        });
+    </script>
+</body>
+</html>
