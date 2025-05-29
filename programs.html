@@ -1,147 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Programs</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom font for better aesthetics */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5; /* Light gray background */
-        }
-        /* Custom styles for program cards */
-        .program-card {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-        .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .icon-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #e0e7ff; /* Light blue for icon background */
-            color: #4f46e5; /* Darker blue for icon */
-            font-weight: bold;
-            text-align: center;
-            font-size: 2.5rem; /* Larger icon size */
-            border-radius: 50%; /* Circular icon */
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Programs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f2f5;
+    }
+
+    .program-card {
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e0e7ff;
+      color: #4f46e5;
+      font-weight: bold;
+      text-align: center;
+      font-size: 2.5rem;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
+
 <body class="antialiased text-gray-800">
-    <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-                Explore Our Professional Training Programs
-            </h1>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                Enhance your skills and boost your career with our specialized courses and workshops.
-            </p>
-        </header>
+  <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+    <header class="text-center mb-12">
+      <div class="absolute top-4 left-4">
+        <a href="index.html"
+          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+            aria-hidden="true">
+            <path
+              d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+          </svg>
+          Home
+        </a>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+        Explore Our Professional Training Programs
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Enhance your skills and boost your career with our specialized courses and workshops.
+      </p>
+    </header>
 
-        <main id="programs-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-            </main>
+    <main id="programs-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+    </main>
 
-        <footer class="mt-16 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 Internship Firm. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer class="mt-16 text-center text-gray-500 text-sm">
+      <p> Learn form the latest industry standards.</p>
+    </footer>
+  </div>
 
-    <script>
-        // Array of program data
-        const programs = [
-            {
-                title: "Resume Building Workshop",
-                icon: "📝", // Emoji icon
-                description: "Craft a compelling resume that stands out to top employers. Learn best practices, keyword optimization, and formatting tips.",
-                link: "#" // Placeholder link
-            },
-            {
-                title: "AI Integrated Courses",
-                icon: "🤖", // Emoji icon
-                description: "Dive into the world of Artificial Intelligence. Courses cover machine learning, deep learning, and practical AI applications.",
-                link: "#" // Placeholder link
-            },
-            {
-                title: "Professional Certification Courses",
-                icon: "🎓", // Emoji icon
-                description: "Gain industry-recognized certifications in various domains, enhancing your skills and employability.",
-                link: "#" // Placeholder link
-            },
-            {
-                title: "Interview Preparation",
-                icon: "🗣️", // Emoji icon
-                description: "Master interview techniques, including behavioral questions, technical rounds, and mock interviews to build confidence.",
-                link: "#" // Placeholder link
-            },
-            {
-                title: "Soft Skills Development",
-                icon: "🤝", // Emoji icon
-                description: "Improve communication, teamwork, leadership, and problem-solving skills essential for professional success.",
-                link: "#" // Placeholder link
-            },
-            {
-                title: "Industry-Specific Workshops",
-                icon: "🏭", // Emoji icon
-                description: "Attend specialized workshops focused on current industry trends and technologies in various sectors.",
-                link: "#" // Placeholder link
-            }
-        ];
+  <script>
+    const programs = [
+      {
+        title: "Resume Building Workshop",
+        icon: "📝",
+        description: "Craft a compelling resume that stands out to top employers. Learn best practices, keyword optimization, and formatting tips.",
+        link: "https://www.youtube.com/watch?v=y3R9e2L8I9E"
+      },
+      {
+        title: "AI Integrated Courses",
+        icon: "🤖",
+        description: "Dive into the world of Artificial Intelligence. Courses cover machine learning, deep learning, and practical AI applications.",
+        link: "https://www.youtube.com/watch?v=j3DsRK0IBfs"
+      },
+      {
+        title: "Professional Certification Courses",
+        icon: "🎓",
+        description: "Gain industry-recognized certifications in various domains, enhancing your skills and employability.",
+        link: "https://www.youtube.com/watch?v=_4BHlzgkm7Y"
+      },
+      {
+        title: "Interview Preparation",
+        icon: "🗣️",
+        description: "Master interview techniques, including behavioral questions, technical rounds, and mock interviews to build confidence.",
+        link: "https://www.youtube.com/watch?v=gDN7cJ3Rt80"
+      },
+      {
+        title: "Soft Skills Development",
+        icon: "🤝",
+        description: "Improve communication, teamwork, leadership, and problem-solving skills essential for professional success.",
+        link: "https://www.youtube.com/watch?v=0gUgm4zB2F4"
+      },
+      {
+        title: "Industrial Training",
+        icon: "🏭",
+        description: "Attend specialized workshops focused on current industry trends and technologies in various sectors.",
+        link: "https://www.youtube.com/watch?v=Knn363A6R-w"
+      }
+    ];
 
-        // Get the container where program cards will be added
-        const programsContainer = document.getElementById('programs-container');
+    const programsContainer = document.getElementById('programs-container');
 
-        // Function to create a program card HTML
-        function createProgramCard(program) {
-            // Create the main card div
-            const card = document.createElement('div');
-            card.className = 'program-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-200';
+    function createProgramCard(program) {
+      const card = document.createElement('div');
+      card.className = 'program-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-200';
 
-            // Create the icon placeholder div
-            const icon = document.createElement('div');
-            icon.className = 'icon-placeholder';
-            icon.textContent = program.icon; // Display emoji as icon
+      const icon = document.createElement('div');
+      icon.className = 'icon-placeholder';
+      icon.textContent = program.icon;
 
-            // Create the program title heading
-            const title = document.createElement('h2');
-            title.className = 'text-2xl font-semibold text-gray-900 mb-2';
-            title.textContent = program.title;
+      const title = document.createElement('h2');
+      title.className = 'text-2xl font-semibold text-gray-900 mb-2';
+      title.textContent = program.title;
 
-            // Create the description paragraph
-            const description = document.createElement('p');
-            description.className = 'text-gray-600 mb-4 flex-grow'; // flex-grow to ensure consistent height
-            description.textContent = program.description;
+      const description = document.createElement('p');
+      description.className = 'text-gray-600 mb-4 flex-grow';
+      description.textContent = program.description;
 
-            // Create the "Learn More" link
-            const link = document.createElement('a');
-            link.href = program.link;
-            link.target = "_blank"; // Open in new tab
-            link.rel = "noopener noreferrer"; // Security best practice
-            link.className = 'inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-5 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg';
-            link.textContent = 'Learn More';
+      const link = document.createElement('a');
+      link.href = program.link;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.className = 'inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-5 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg';
+      link.textContent = 'Learn More';
 
-            // Append all elements to the card
-            card.appendChild(icon);
-            card.appendChild(title);
-            card.appendChild(description);
-            card.appendChild(link);
+      card.appendChild(icon);
+      card.appendChild(title);
+      card.appendChild(description);
+      card.appendChild(link);
 
-            return card;
-        }
+      return card;
+    }
 
-        // Loop through the programs array and add each card to the container
-        programs.forEach(program => {
-            const programCard = createProgramCard(program);
-            programsContainer.appendChild(programCard);
-        });
-    </script>
+    programs.forEach(program => {
+      const programCard = createProgramCard(program);
+      programsContainer.appendChild(programCard);
+    });
+  </script>
 </body>
+
 </html>

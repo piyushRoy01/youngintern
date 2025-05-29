@@ -6,64 +6,64 @@
     <title>Internship Application</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom font for better aesthetics */
+        
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5; /* Light gray background */
+            background-color: #f0f2f5; 
         }
         .form-container {
             background-color: #ffffff;
-            border-radius: 1rem; /* rounded-xl */
+            border-radius: 1rem; 
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            padding: 2.5rem; /* p-10 */
-            border: 1px solid #e2e8f0; /* border-gray-200 */
+            padding: 2.5rem; 
+            border: 1px solid #e2e8f0; 
         }
         .form-input, .form-textarea, .form-select {
-            margin-top: 0.25rem; /* mt-1 */
+            margin-top: 0.25rem; 
             display: block;
             width: 100%;
-            padding: 0.75rem 1rem; /* px-4 py-2 */
-            border: 1px solid #d1d5db; /* border-gray-300 */
-            border-radius: 0.375rem; /* rounded-md */
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            padding: 0.75rem 1rem; 
+            border: 1px solid #d1d5db; 
+            border-radius: 0.375rem; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
             transition: all 0.2s ease-in-out;
         }
         .form-input:focus, .form-textarea:focus, .form-select:focus {
             outline: none;
             ring: 2px;
-            ring-color: #6366f1; /* ring-indigo-500 */
-            border-color: #6366f1; /* border-indigo-500 */
+            ring-color: #6366f1; 
+            border-color: #6366f1; 
         }
         .form-label {
             display: block;
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 500; /* font-medium */
-            color: #374151; /* text-gray-700 */
+            font-size: 0.875rem; 
+            font-weight: 500; 
+            color: #374151; 
             margin-bottom: 0.25rem;
         }
         .submit-button {
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 0.75rem 1rem; /* py-2 px-4 */
+            padding: 0.75rem 1rem; 
             border: 1px solid transparent;
-            border-radius: 0.375rem; /* rounded-md */
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 500; /* font-medium */
+            border-radius: 0.375rem; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+            font-size: 1.125rem; 
+            font-weight: 500; 
             color: #ffffff;
-            background-color: #4f46e5; /* bg-indigo-600 */
+            background-color: #4f46e5; 
             transition: background-color 0.3s ease-in-out;
         }
         .submit-button:hover {
-            background-color: #4338ca; /* hover:bg-indigo-700 */
+            background-color: #4338ca; 
         }
         .submit-button:focus {
             outline: none;
             ring: 2px;
             ring-offset: 2px;
-            ring-color: #6366f1; /* focus:ring-indigo-500 */
+            ring-color: #6366f1; 
         }
         .message-box {
             padding: 1rem;
@@ -73,14 +73,14 @@
             margin-top: 1rem;
         }
         .message-success {
-            background-color: #d1fae5; /* bg-green-100 */
-            color: #065f46; /* text-green-800 */
-            border: 1px solid #34d399; /* border-green-400 */
+            background-color: #d1fae5; 
+            color: #065f46; 
+            border: 1px solid #34d399; 
         }
         .message-error {
-            background-color: #fee2e2; /* bg-red-100 */
-            color: #991b1b; /* text-red-800 */
-            border: 1px solid #ef4444; /* border-red-400 */
+            background-color: #fee2e2; 
+            color: #991b1b; 
+            border: 1px solid #ef4444; 
         }
         .hidden {
             display: none;
@@ -190,9 +190,9 @@
         const formSubmissionMessage = document.getElementById('form-submission-message');
 
         internshipApplicationForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); 
 
-            // Gather form data
+            
             const formData = {
                 fullName: document.getElementById('applicantFullName').value,
                 email: document.getElementById('applicantEmail').value,
@@ -200,8 +200,8 @@
                 desiredRole: document.getElementById('desiredRole').value,
                 startDate: document.getElementById('startDate').value,
                 endDate: document.getElementById('endDate').value,
-                // For resumeUpload, you would typically send the file to a backend server.
-                // Here, we're just logging its name as a placeholder.
+                
+                
                 resumeFileName: document.getElementById('resumeUpload').files[0] ? document.getElementById('resumeUpload').files[0].name : 'No file uploaded',
                 coverLetter: document.getElementById('coverLetter').value,
                 education: {
@@ -209,7 +209,7 @@
                     university: document.getElementById('university').value,
                     graduationYear: document.getElementById('graduationYear').value
                 },
-                // Removed workExperience from formData
+                
                 skills: document.getElementById('skills').value.split(',').map(skill => skill.trim()).filter(skill => skill !== '')
             };
 
@@ -241,15 +241,15 @@
 
             
 
-            // Display a success message
+            
             formSubmissionMessage.textContent = 'Your internship application has been submitted successfully! We will review it and get back to you.';
             formSubmissionMessage.classList.remove('hidden', 'message-error');
             formSubmissionMessage.classList.add('message-success');
 
-            // Optionally, clear the form fields after successful submission
+            
             internshipApplicationForm.reset();
 
-            // Hide the message after a few seconds
+            
             setTimeout(() => {
                 formSubmissionMessage.classList.add('hidden');
             }, 7000);
